@@ -18,7 +18,7 @@ RUN mkdir /home/zhouxi
 
 # Change apt source after backup, only support ubuntu
 RUN cp /etc/apt/sources.list /etc/apt/sources.list.bkp
-RUN sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
+# RUN sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
 
 RUN printf "#!/bin/sh\nexit 0" > /usr/sbin/policy-rc.d
 
