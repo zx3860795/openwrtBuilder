@@ -27,10 +27,10 @@ RUN dpkg --add-architecture i386
 
 # Install software here
 
-RUN     DEBIAN_FRONTEND=noninteractive -E apt-get -qq update
-        DEBIAN_FRONTEND=noninteractive -E apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf
-        DEBIAN_FRONTEND=noninteractive -E apt-get -qq autoremove --purge
-        DEBIAN_FRONTEND=noninteractive -E apt-get -qq clean
+RUN     DEBIAN_FRONTEND=noninteractive  apt-get -qq update
+        DEBIAN_FRONTEND=noninteractive  apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf
+        DEBIAN_FRONTEND=noninteractive  apt-get -qq autoremove --purge
+        DEBIAN_FRONTEND=noninteractive  apt-get -qq clean
         DEBIAN_FRONTEND=noninteractive timedatectl set-timezone "$TZ"
 
 WORKDIR /home/zhouxi
