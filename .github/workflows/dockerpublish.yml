@@ -32,7 +32,7 @@ jobs:
             docker-compose --file docker-compose.test.yml build
             docker-compose --file docker-compose.test.yml run sut
           else
-           echo 1 
+           echo "${{ secrets.AIYUN_PASSWORD }}" | docker login registry.cn-hongkong.aliyuncs.com -u 星网周曦 --password-stdin
           fi
 
   # Push image to GitHub Packages.
@@ -51,7 +51,7 @@ jobs:
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
       - name: Log into registry
-        run: echo "${{ secrets.AIYUN_PASSWORD }}" | docker login registry.cn-hongkong.aliyuncs.com -u ${{ secrets.AIYUN_NAME }} --password-stdin
+        run: echo "${{ secrets.AIYUN_PASSWORD }}" | docker login registry.cn-hongkong.aliyuncs.com -u 星网周曦 --password-stdin
 
       - name: Push image
         run: |
