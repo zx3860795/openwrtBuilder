@@ -14,7 +14,7 @@ ENV REFRESHED_AT 2019-11-22
 ENV DEBIAN_FRONTEND noninteractive
 
 # New neoway source mount dir
-RUN mkdir /home/${board}
+RUN mkdir /home/zhouxi
 
 # Change apt source after backup, only support ubuntu
 RUN cp /etc/apt/sources.list /etc/apt/sources.list.bkp
