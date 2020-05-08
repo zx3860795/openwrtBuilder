@@ -15,7 +15,7 @@ on:
 
 env:
   # TODO: Change variable to your image's name.
-  IMAGE_NAME: openwrtBuilderzhouxi
+  IMAGE_NAME: openwrtbuilderzhouxi
 
 jobs:
   # Run tests.
@@ -32,7 +32,7 @@ jobs:
             docker-compose --file docker-compose.test.yml build
             docker-compose --file docker-compose.test.yml run sut
           else
-            docker build . --file Dockerfile
+           # docker build . --file Dockerfile
           fi
 
   # Push image to GitHub Packages.
